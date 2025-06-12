@@ -1,23 +1,27 @@
 import { Button } from "@/components/ui/button";
 import { PersonStandingIcon } from "lucide-react";
 import Link from "next/link";
+import styles from "./ LandingPage.module.scss";
+
 export default function LandingPage() {
   return (
-    <>
-      <h1 className="flex gap-2">
-        <PersonStandingIcon size={50} className="text-pink-500" />
+    <div className={styles.container}>
+      <h1 className={styles.title}>
+        <PersonStandingIcon size={50} className={styles.icon} />
         supportMe
       </h1>
-      <p>the best dashboard to mange customer support</p>
-      <div className="flex gap-2 items-center">
+      <p className={styles.subtitle}>
+        the best dashboard to manage customer support
+      </p>
+      <div className={styles.actions}>
         <Button asChild>
           <Link href="/login">Log in</Link>
         </Button>
-        <span>or</span>
-        <Button asChild variant={"outline"}>
-          <Link href="/sign-up">Sign up</Link>
+        <span className={styles.orText}>or</span>
+        <Button variant="outline" disabled>
+          Sign up
         </Button>
       </div>
-    </>
+    </div>
   );
 }

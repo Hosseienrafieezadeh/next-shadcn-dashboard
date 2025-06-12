@@ -1,0 +1,75 @@
+.dashboardContainer {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  height: 100vh;
+}
+
+.mainMenuWrapper {
+  display: none;
+  @media (min-width: 768px) {
+    display: block;
+  }
+}
+
+.mobileMenu {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: var(--bg-color);
+  border-bottom: 1px solid var(--border-color);
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.greetingText {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.contentWrapper {
+  overflow: auto;
+  padding: 16px;
+  space-between: 4px;
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logoutButton,
+.lightDarkToggle {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: var(--hover-bg-color, rgba(0, 0, 0, 0.1));
+    color: var(--hover-text-color, var(--text-color));
+  }
+}
+
+.lightDarkToggle {
+  background-color: var(--toggle-bg-color);
+  padding: 10px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: var(--hover-bg-color);
+  }
+}

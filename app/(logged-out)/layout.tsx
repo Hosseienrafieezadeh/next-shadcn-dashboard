@@ -1,15 +1,15 @@
 import { LightDarckToggle } from "@/components/ui/light-dark-toggle";
+import styles from "./LoggedOutLayout.module.scss";
 
 type Props = {
   children?: React.ReactNode;
 };
+
 export default function LoggedOutLayout({ children }: Props) {
   return (
     <>
-      <div className="flex flex-col gap-4 min-h-screen items-center justify-center p-24">
-        {children}
-      </div>
-      <LightDarckToggle className="fixed top-[calc(50%-12px)] right-2" />
+      <div className={styles.container}>{children}</div>
+      <LightDarckToggle className={styles.toggle} />
     </>
   );
 }

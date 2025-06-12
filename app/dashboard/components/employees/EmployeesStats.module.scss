@@ -1,0 +1,93 @@
+.statsGrid {
+  display: grid;
+  gap: 1rem;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.cardHeader {
+  padding-bottom: 0.5rem;
+}
+
+.cardTitle {
+  font-size: 1rem;
+}
+
+.cardContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.statBox {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.statValue {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.successText {
+  font-size: 0.75rem;
+  color: #22c55e;
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.warningText {
+  font-size: 0.75rem;
+  color: #ef4444;
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.employeeOfMonth {
+  border-color: #ec4899;
+  display: flex;
+  flex-direction: column;
+}
+
+.monthContent {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.employeeName {
+  font-size: 1.5rem;
+}
+
+.monthFooter {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 0.75rem;
+  color: var(--muted-foreground);
+  margin-top: auto;
+}
+
+.celebrateIcon {
+  color: #ec4899;
+}
+
+.locationTrends {
+  margin-top: 1rem;
+}
+
+.trendTitle {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 1.125rem;
+}
+
+.trendChart {
+  padding-left: 0;
+}

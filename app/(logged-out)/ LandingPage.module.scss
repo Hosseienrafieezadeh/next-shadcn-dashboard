@@ -1,0 +1,35 @@
+.container {
+  padding: 1rem;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.icon {
+  color: #ec4899;
+}
+
+.subtitle {
+  margin-top: 0.5rem;
+  color: #555;
+  font-size: 1rem;
+}
+
+.actions {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 1rem;
+  margin-left: 3;
+}
+
+.orText {
+  color: #888;
+  font-size: 0.875rem;
+}

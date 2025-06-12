@@ -1,0 +1,23 @@
+.chartContainer {
+  height: 350px;
+  width: 100%;
+
+  .recharts-tooltip-cursor {
+    fill: #e4e4e7;
+  }
+
+  .dark & .recharts-tooltip-cursor {
+    fill: #27272a;
+  }
+
+  .tooltipWrapper {
+    font-size: 0.875rem;
+    border-radius: 0.375rem;
+    background-color: #000;
+    border: 1px solid #3f3f46;
+  }
+
+  .legendText {
+    font-size: 0.875rem;
+  }
+}

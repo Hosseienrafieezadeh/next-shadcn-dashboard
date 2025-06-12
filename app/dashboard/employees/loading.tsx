@@ -1,23 +1,26 @@
+"use client";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
+import styles from "./loading.module.scss"; // ایمپورت فایل SCSS
 
 export default function Loading() {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Employees</CardTitle>
+    <Card className={styles.card}>
+      <CardHeader className={styles.cardHeader}>
+        <CardTitle className={styles.cardTitle}>Employees</CardTitle>
       </CardHeader>
-      <CardContent className="grid grid-cols-[60px_1fr_1fr_1fr_1fr] gap-4 items-center">
-        <Skeleton className="size-10 rounded-full" />
-        <Skeleton className="h-8 w-full" />
-        <Skeleton className="h-8 w-full" />
-        <Skeleton className="h-8 w-full" />
-        <Skeleton className="h-8 w-full" />
-        <Skeleton className="size-10 rounded-full" />
-        <Skeleton className="h-8 w-full" />
-        <Skeleton className="h-8 w-full" />
-        <Skeleton className="h-8 w-full" />
-        <Skeleton className="h-8 w-full" />
+      <CardContent className={styles.cardContent}>
+        <Skeleton className={`${styles.skeleton} ${styles.skeletonCircle}`} />
+        <Skeleton className={`${styles.skeleton} ${styles.skeletonBar}`} />
+        <Skeleton className={`${styles.skeleton} ${styles.skeletonBar}`} />
+        <Skeleton className={`${styles.skeleton} ${styles.skeletonBar}`} />
+        <Skeleton className={`${styles.skeleton} ${styles.skeletonBar}`} />
+        <Skeleton className={`${styles.skeleton} ${styles.skeletonCircle}`} />
+        <Skeleton className={`${styles.skeleton} ${styles.skeletonBar}`} />
+        <Skeleton className={`${styles.skeleton} ${styles.skeletonBar}`} />
+        <Skeleton className={`${styles.skeleton} ${styles.skeletonBar}`} />
+        <Skeleton className={`${styles.skeleton} ${styles.skeletonBar}`} />
       </CardContent>
     </Card>
   );

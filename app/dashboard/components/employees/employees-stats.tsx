@@ -20,82 +20,89 @@ import Image from "next/image";
 import Link from "next/link";
 import cm from "@/public/images/cm.jpg";
 import WorkLocationTrends from "./work-location-trends";
+
+import styles from "./EmployeesStats.module.scss";
+
 export default function EmployeesStats() {
   const totalEmployees = 100;
   const employeesPresent = 80;
   const employeesPresentPercentage = (employeesPresent / totalEmployees) * 100;
+
   return (
     <>
-      <div className="grid lg:grid-cols-3 gap-4">
+      <div className={styles.statsGrid}>
         <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-base">Total employees</CardTitle>
+          <CardHeader className={styles.cardHeader}>
+            <CardTitle className={styles.cardTitle}>Total employees</CardTitle>
           </CardHeader>
-          <CardContent className="flex justify-between items-center">
-            <div className="flex gap-2">
+          <CardContent className={styles.cardContent}>
+            <div className={styles.statBox}>
               <UserIcon />
-              <div className="text-5xl font-bold">{totalEmployees}</div>
+              <div className={styles.statValue}>{totalEmployees}</div>
             </div>
-            <div>
-              <Button size="xs" asChild>
-                <Link href="/dashboard/employees">View all</Link>
-              </Button>
-            </div>
+            <Button size="xs" asChild>
+              <Link href="/dashboard/employees">View all</Link>
+            </Button>
           </CardContent>
         </Card>
+
         <Card>
-          <CardHeader className="pb-2">
-            <CardTitle className="text-base">Employee present</CardTitle>
+          <CardHeader className={styles.cardHeader}>
+            <CardTitle className={styles.cardTitle}>Employee present</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="flex gap-2">
+            <div className={styles.statBox}>
               {employeesPresentPercentage > 75 ? (
                 <UserCheck2Icon />
               ) : (
                 <UserRoundXIcon />
               )}
-              <div className="text-5xl font-bold">{employeesPresent}</div>
+              <div className={styles.statValue}>{employeesPresent}</div>
             </div>
           </CardContent>
           <CardFooter>
             {employeesPresentPercentage > 75 ? (
-              <span className="text-xs text-green-500 flex gap-1 items-center">
+              <span className={styles.successText}>
                 <BadgeCheckIcon />
                 {employeesPresentPercentage}% of employee are present
               </span>
             ) : (
-              <span className="text-xs text-red-500 flex gap-1 items-center">
+              <span className={styles.warningText}>
                 <AlertTriangleIcon />
-                only{employeesPresentPercentage}% of employee are present
+                only {employeesPresentPercentage}% of employee are present
               </span>
             )}
           </CardFooter>
         </Card>
-        <Card className="border-pink-500 flex flex-col">
-          <CardHeader className="pb-2">
-            <CardTitle className="text-base">Employee of the month</CardTitle>
+
+        <Card className={styles.employeeOfMonth}>
+          <CardHeader className={styles.cardHeader}>
+            <CardTitle className={styles.cardTitle}>
+              Employee of the month
+            </CardTitle>
           </CardHeader>
-          <CardContent className="flex gap-2 items-center">
+          <CardContent className={styles.monthContent}>
             <Avatar>
               <Image src={cm} alt="Employee of the month avatar" />
               <AvatarFallback>CM</AvatarFallback>
             </Avatar>
-            <span className="text-2xl">Collin murray!!</span>
+            <span className={styles.employeeName}>Collin Murray!!</span>
           </CardContent>
-          <CardFooter className="flex gap-2 items-center text-xs text-muted-foreground mt-auto">
-            <PartyPopperIcon className="text-pink-500" />
-            <span>Congratulations,Colin!</span>
+          <CardFooter className={styles.monthFooter}>
+            <PartyPopperIcon className={styles.celebrateIcon} />
+            <span>Congratulations, Colin!</span>
           </CardFooter>
         </Card>
       </div>
-      <Card className="my-4">
+
+      <Card className={styles.locationTrends}>
         <CardHeader>
-          <CardTitle className="text-lg flex items-center gap-2">
+          <CardTitle className={styles.trendTitle}>
             <Laptop2Icon />
             <span>Employee work location trends</span>
           </CardTitle>
         </CardHeader>
-        <CardContent className="pl-0">
+        <CardContent className={styles.trendChart}>
           <WorkLocationTrends />
         </CardContent>
       </Card>
